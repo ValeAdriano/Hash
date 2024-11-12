@@ -2,12 +2,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class EstruturaTabelaHash {
+public abstract class EstruturaTabela {
     protected List<LinkedList<String>> tabela;
     protected int tamanho;
     protected int colisoes;
 
-    public EstruturaTabelaHash(int tamanho) {
+    public EstruturaTabela(int tamanho) {
         this.tamanho = tamanho;
         this.tabela = new ArrayList<>(tamanho);
         for (int i = 0; i < tamanho; i++) {
@@ -41,7 +41,15 @@ public abstract class EstruturaTabelaHash {
 
     public void imprimirDistribuicao() {
         for (int i = 0; i < tabela.size(); i++) {
-            System.out.println("Posição " + i + ": " + tabela.get(i).size() + " elementos");
+            System.out.println("Posiçao " + i + ": " + tabela.get(i).size() + " elementos");
+        }
+    }
+
+    public void imprimirColisoesPorPosicao() {
+        System.out.println("Distribuiçao de colisoes por posiçao:");
+        for (int i = 0; i < tabela.size(); i++) {
+            int colisoesPosicao = tabela.get(i).size() > 1 ? tabela.get(i).size() - 1 : 0;
+            System.out.println("Posiçao " + i + ": " + colisoesPosicao + " colisoes");
         }
     }
 }

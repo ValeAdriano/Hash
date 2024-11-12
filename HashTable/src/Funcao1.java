@@ -1,5 +1,5 @@
-public class TabelaHashComFuncaoHash1 extends EstruturaTabelaHash {
-    public TabelaHashComFuncaoHash1(int tamanho) {
+public class Funcao1 extends EstruturaTabela {
+    public Funcao1(int tamanho) {
         super(tamanho);
     }
 
